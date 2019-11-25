@@ -1,26 +1,40 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { TodoListContext } from '../contexts/TodoListContext'
 
 const TodoForm = () => {
-  const { addTodo } = useContext(TodoListContext)
-  const [todoItem, setTodoItem] = useState('')
+  const { addTodo, clearList, editTitle, edit } = useContext(TodoListContext)
+  const [title, setTitle] = useState('')
 
   const handleSubmit = e => {
     e.preventDefault()
-    addTodo(todoItem)
-    setTodoItem('')
+    addTodo(title)
+    setTitle('')
+  }
+
+  const handleChange = e => {
+    setTitle(e.target.value)
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='form'>
       <input
         type='text'
-        placeholder='Add todo'
-        value={todoItem}
-        onChange={e => setTodoItem(e.target.value)}
+        placeholder='Add Task...'
+        value={edit ? editTitle : title}
+        onChange={handleChange}
         required
+        className='todo-input'
       />
-      <input type='submit' value='Add todo' />
+      <div className='buttons'>
+        <input
+          type='submit'
+          value={edit ? 'Edit Task' : 'Add Task'}
+          className='btn todo-btn'
+        />
+        <button className='btn clear-btn' onClick={clearList}>
+          Clear
+        </button>
+      </div>
     </form>
   )
 }

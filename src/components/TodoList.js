@@ -5,16 +5,18 @@ import Todo from './Todo'
 const TodoList = () => {
   const { todos } = useContext(TodoListContext)
 
-  return todos.length > 0 ? (
+  return (
     <div>
-      <ul>
-        {todos.map(todo => {
-          return <Todo todo={todo} key={todo.id} />
-        })}
-      </ul>
+      {todos.length ? (
+        <ul className='list'>
+          {todos.map(todo => {
+            return <Todo todo={todo} key={todo.id} />
+          })}
+        </ul>
+      ) : (
+        <div className='no-todos'>No Tasks</div>
+      )}
     </div>
-  ) : (
-    <div>No todos</div>
   )
 }
 

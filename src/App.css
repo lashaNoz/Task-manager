@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab:300,400,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background: linear-gradient(100deg, rgb(182, 40, 111) 50%, #ac2066 0);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  background-color: #292f38;
+  width: 25%;
+  min-width: 450px;
+  height: 600px;
+  padding: 30px;
+  box-sizing: border-box;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.header h1 {
+  color: #ccc;
+  font-weight: 300;
+  text-align: center;
+  margin: 50px 20px 60px 20px;
+  font-family: 'Josefin Slab', serif;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.list {
+  width: 90%;
+  margin: auto;
+}
+
+.todo-input {
+  width: 350px;
+  min-width: 250px;
+  padding: 15px 10px 10px 20px;
+  margin-right: 10px;
+  font-family: 'Josefin Sans', serif;
+  font-size: 15px;
+  color: #ccc;
+  background-color: #1d222b;
+  border: 1px solid #444;
+  outline: none;
+  border-radius: 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.buttons {
+  display: flex;
+}
+
+.btn {
+  margin: 10px;
+}
+
+.todo-btn {
+  min-width: 100px;
+  background-color: #790e43;
+  color: #ccc;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  outline: none;
+  cursor: pointer;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding-bottom: 5px;
+}
+
+.list-item span {
+  color: #777;
+}
+
+.delete-btn,
+.edit-btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.delete-btn i {
+  font-size: 16px;
+  color: #bbb;
+  margin-right: 20px;
+}
+
+.edit-btn i {
+  font-size: 16px;
+  color: #bbb;
+}
+
+.clear-btn {
+  width: 100px;
+  height: 35px;
+  background-color: #790e43;
+  color: #ccc;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  outline: none;
+  cursor: pointer;
+}
+
+.no-todos {
+  color: #777;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+}

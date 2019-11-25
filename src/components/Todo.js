@@ -2,12 +2,18 @@ import React, { useContext } from 'react'
 import { TodoListContext } from '../contexts/TodoListContext'
 
 const Todo = ({ todo }) => {
-  const { removeTodo } = useContext(TodoListContext)
+  const { removeTodo, editTodo } = useContext(TodoListContext)
   return (
-    <li>
-      {todo.todoItem}{' '}
-      <button onClick={() => removeTodo(todo.id)}>delete</button>{' '}
-      <button>edit</button>
+    <li className='list-item'>
+      <span>{todo.title} </span>
+      <div>
+        <button className='delete-btn' onClick={() => removeTodo(todo.id)}>
+          <i className='fas fa-trash-alt'></i>
+        </button>{' '}
+        <button className='edit-btn' onClick={() => editTodo(todo.id)}>
+          <i className='fas fa-pen'></i>
+        </button>
+      </div>
     </li>
   )
 }
