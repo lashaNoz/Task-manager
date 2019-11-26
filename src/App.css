@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Slab:300,400,600,700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Josefin+Slab:300,400,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
 
 * {
   margin: 0;
@@ -23,6 +23,7 @@
   height: 600px;
   padding: 30px;
   box-sizing: border-box;
+  border-radius: 5px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
@@ -31,7 +32,7 @@
   font-weight: 300;
   text-align: center;
   margin: 50px 20px 60px 20px;
-  font-family: 'Josefin Slab', serif;
+  font-family: "Josefin Slab", serif;
 }
 
 .main {
@@ -55,12 +56,12 @@
   margin: auto;
 }
 
-.todo-input {
+.task-input {
   width: 350px;
   min-width: 250px;
   padding: 15px 10px 10px 20px;
   margin-right: 10px;
-  font-family: 'Josefin Sans', serif;
+  font-family: "Josefin Sans", serif;
   font-size: 15px;
   color: #ccc;
   background-color: #1d222b;
@@ -78,12 +79,12 @@
   margin: 10px;
 }
 
-.todo-btn {
+.task-btn {
   min-width: 100px;
   background-color: #790e43;
   color: #ccc;
   border: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   border-radius: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
@@ -99,7 +100,7 @@
 }
 
 .list-item span {
-  color: #777;
+  color: #999;
 }
 
 .delete-btn,
@@ -126,7 +127,7 @@
   background-color: #790e43;
   color: #ccc;
   border: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   border-radius: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
@@ -134,7 +135,7 @@
   cursor: pointer;
 }
 
-.no-todos {
+.no-tasks {
   color: #777;
   text-align: center;
   font-size: 18px;

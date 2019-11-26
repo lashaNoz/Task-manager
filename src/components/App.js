@@ -1,25 +1,25 @@
-import React from 'react'
-import TodoListContextProvider from '../contexts/TodoListContext'
-import TodoList from './TodoList'
-import TodoForm from './TodoForm'
+import React from "react";
+import TaskListContextProvider from "../contexts/TaskListContext";
+import TaskList from "./TaskList";
+import TaskForm from "./TaskForm";
 
-import '../App.css'
-import Header from './Header'
+import "../App.css";
+import Header from "./Header";
 
 const App = () => {
   return (
-    <div className='container'>
-      <div className='App'>
-        <TodoListContextProvider>
+    <TaskListContextProvider>
+      <div className="container">
+        <div className="App">
           <Header />
-          <div className='main'>
-            <TodoForm />
-            <TodoList />
+          <div className="main">
+            <TaskForm />
+            <TaskList />
           </div>
-        </TodoListContextProvider>
+        </div>
       </div>
-    </div>
-  )
-}
+    </TaskListContextProvider>
+  );
+};
 
-export default App
+export default App;
