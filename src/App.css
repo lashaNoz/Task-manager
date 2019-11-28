@@ -54,6 +54,26 @@
 .list {
   width: 90%;
   margin: auto;
+  max-height: 300px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #aaa;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 10px;
 }
 
 .task-input {
@@ -119,6 +139,7 @@
 .edit-btn i {
   font-size: 16px;
   color: #bbb;
+  margin-right: 20px;
 }
 
 .clear-btn {

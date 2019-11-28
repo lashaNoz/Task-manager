@@ -4,13 +4,17 @@ import uuid from "uuid";
 export const TaskListContext = createContext();
 
 const TaskListContextProvider = props => {
-  const [tasks, setTasks] = useState([]);
+  const initialState = JSON.parse(localStorage.getItem("tasks"));
 
-  const [editableItem, setEditableItem] = useState(null);
+  const [tasks, setTasks] = useState(initialState || []);
+
+  const [editItem, setEditItem] = useState(null);
 
   // Add tasks
   const addTask = title => {
+    // JSON.parse(localStorage.getItem("tasks"));
     setTasks([...tasks, { title, id: uuid() }]);
+    // localStorage.setItem("tasks", JSON.stringify(tasks));
   };
 
   // Remove tasks
@@ -27,7 +31,7 @@ const TaskListContextProvider = props => {
   const findItem = id => {
     const item = tasks.find(task => task.id === id);
 
-    setEditableItem(item);
+    setEditItem(item);
   };
 
   // Edit task
@@ -37,7 +41,7 @@ const TaskListContextProvider = props => {
     console.log(newTasks);
 
     setTasks(newTasks);
-    setEditableItem(null);
+    setEditItem(null);
   };
 
   return (
@@ -49,7 +53,7 @@ const TaskListContextProvider = props => {
         clearList,
         findItem,
         editTask,
-        editableItem
+        editItem
       }}
     >
       {props.children}
