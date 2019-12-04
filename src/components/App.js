@@ -10,7 +10,7 @@ const App = () => {
   return (
     <TaskListContextProvider>
       <div className="container">
-        <div className="App">
+        <div className="app-wrapper">
           <Header />
           <div className="main">
             <TaskForm />

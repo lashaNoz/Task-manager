@@ -1,34 +1,32 @@
-import React, { useState, useContext, useEffect } from "react";
-import { TaskListContext } from "../contexts/TaskListContext";
+import React, { useState, useContext, useEffect } from 'react'
+import { TaskListContext } from '../contexts/TaskListContext'
 
 const TaskForm = () => {
-  const { addTask, clearList, editTask, editItem } = useContext(
-    TaskListContext
-  );
-  const [title, setTitle] = useState("");
+  const { addTask, clearList, editTask, editItem } = useContext(TaskListContext)
+  const [title, setTitle] = useState('')
 
   const handleSubmit = e => {
-    e.preventDefault();
-    if (editItem === null) {
-      addTask(title);
-      setTitle("");
+    e.preventDefault()
+    if (!editItem) {
+      addTask(title)
+      setTitle('')
     } else {
-      editTask(title, editItem.id);
+      editTask(title, editItem.id)
     }
-  };
+  }
 
   const handleChange = e => {
-    setTitle(e.target.value);
-  };
+    setTitle(e.target.value)
+  }
 
   useEffect(() => {
-    if (editItem !== null) {
-      setTitle(editItem.title);
-      console.log(editItem);
+    if (editItem) {
+      setTitle(editItem.title)
+      console.log(editItem)
     } else {
-      setTitle("");
+      setTitle('')
     }
-  }, [editItem]);
+  }, [editItem])
 
   return (
     <form onSubmit={handleSubmit} className="form">
@@ -41,17 +39,15 @@ const TaskForm = () => {
         className="task-input"
       />
       <div className="buttons">
-        <input
-          type="submit"
-          value={editItem ? "Edit Task" : "Add Task"}
-          className="btn task-btn"
-        />
+        <button type="submit" className="btn add-task-btn">
+          {editItem ? 'Edit Task' : 'Add Task'}
+        </button>
         <button className="btn clear-btn" onClick={clearList}>
           Clear
         </button>
       </div>
     </form>
-  );
-};
+  )
+}
 
-export default TaskForm;
+export default TaskForm
